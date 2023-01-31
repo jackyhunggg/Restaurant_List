@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.render('index', {restaurant: list.results});
 })
 
-// 使用者可以透過搜尋餐廳名稱來找到特定的餐廳
+// 使用者可以透過搜尋餐廳名稱and類別來找到特定的餐廳
 app.get('/search', (req,res) => {
     const keyword = req.query.keyword;
     const restaurants = list.results.filter(restaurant => {
