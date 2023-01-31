@@ -22,7 +22,7 @@ app.get('/search', (req,res) => {
         || restaurant.category.toLowerCase().includes(keyword.toLowerCase())
     })
     console.log(restaurants)
-    res.render('index', {restaurants: restaurants, keyword: keyword})
+    res.render('index', {restaurant: restaurants, keyword: keyword})
 })
 
 // 使用者可以點進去看餐廳的詳細資訊
