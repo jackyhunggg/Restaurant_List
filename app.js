@@ -10,7 +10,15 @@ app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
     res.render('index', {restaurant: list.results});
-    // console.log(list.results)
+})
+
+app.get('/search', (req,res) => {
+    const keyword = req.query.keyword;
+    const restaurants = list.results.filter(restaurant => {
+        return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
+    })
+    console.log(restaurants)
+    res.render('index', {restaurants: restaurants, keyword: keyword})
 })
 
 app.get('/:restaurant_id', (req, res) => {
